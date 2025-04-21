@@ -146,7 +146,6 @@ defmodule ExcellentMigrations.AstParser do
     end
   end
 
-
   defp detect_column_reference_added({fun_name, location, [_, {:references, _, _}]})
        when fun_name in [:add, :modify] do
     [{:column_reference_added, Keyword.get(location, :line)}]
